@@ -1,16 +1,19 @@
-function newGame (){
+function newGame () {
   var square = document.getElementsByClassName('square')
+  var turn = document.getElementById('turn')
   var currentTurn = 'X'
   function move () {
-    if (this.innerHTML != '') {
+    if (this.innerHTML !== '') {
       alert ('box is filled!')
     } else if (currentTurn === 'O') {
       this.innerHTML = 'X'
       currentTurn = 'X'
+      turn.textContent = "O's"
       gameOver ('X')
     } else if (currentTurn === 'X') {
       this.innerHTML = 'O'
       currentTurn = 'O'
+      turn.textContent = "X's"
       gameOver ('O')
     }
   }
@@ -31,6 +34,7 @@ function newGame (){
         document.getElementById('restart').style.opacity = '1'
         document.getElementById('restart').addEventListener('click', clearBox)
         currentTurn = 'X'
+        turn.textContent = "O's"
     } else if (
       (square[0].innerHTML === 'X' || square[0].innerHTML === 'O') &&
       (square[1].innerHTML === 'X' || square[1].innerHTML === 'O') &&
@@ -46,16 +50,17 @@ function newGame (){
     document.getElementById('restart').style.opacity = '1'
     document.getElementById('restart').addEventListener('click', clearBox)
     currentTurn = 'X'
+    turn.textContent = "O's"
     }
   }
-  function clearBox (){
+  function clearBox () {
     for (var i = 0; i < square.length; i++) {
     square[i].innerHTML = ''
     }
     document.getElementById('restart').style.opacity = '0'
   }
   for (var i = 0; i < square.length; i++) {
-  square[i].addEventListener("click", move)
+  square[i].addEventListener('click', move)
   }
 }
 newGame()

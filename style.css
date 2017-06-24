@@ -2,15 +2,23 @@ td {
   width: 120px;
   height: 120px;
   font-size: 40pt;
+  margin: 0 auto;
 }
 body {
   text-align: center;
   background-color: rgb(180, 180, 180);
+  font-family: 'Josefin Sans', sans-serif;
 }
 .gameboard {
-  width: 375px;
+  width: 380px;
   margin: 0 auto;
 }
 #restart {
   opacity: 0;
+}
+span {
+  font-size: 30pt;
+}
+h1 {
+  font-size: 40pt;
 }
