@@ -30,6 +30,22 @@ function newGame (){
         alert (a + ' is the winner!')
         document.getElementById('restart').style.opacity = '1'
         document.getElementById('restart').addEventListener('click', clearBox)
+        currentTurn = 'X'
+    } else if (
+      (square[0].innerHTML === 'X' || square[0].innerHTML === 'O') &&
+      (square[1].innerHTML === 'X' || square[1].innerHTML === 'O') &&
+      (square[2].innerHTML === 'X' || square[2].innerHTML === 'O') &&
+      (square[3].innerHTML === 'X' || square[3].innerHTML === 'O') &&
+      (square[4].innerHTML === 'X' || square[4].innerHTML === 'O') &&
+      (square[5].innerHTML === 'X' || square[5].innerHTML === 'O') &&
+      (square[6].innerHTML === 'X' || square[6].innerHTML === 'O') &&
+      (square[7].innerHTML === 'X' || square[7].innerHTML === 'O') &&
+      (square[8].innerHTML === 'X' || square[8].innerHTML === 'O')
+    ) {
+    alert ('It is a tie!')
+    document.getElementById('restart').style.opacity = '1'
+    document.getElementById('restart').addEventListener('click', clearBox)
+    currentTurn = 'X'
     }
   }
   function clearBox (){
@@ -42,6 +58,4 @@ function newGame (){
   square[i].addEventListener("click", move)
   }
 }
-
-
-newGame ()
+newGame()
