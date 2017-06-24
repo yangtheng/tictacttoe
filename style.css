@@ -1,0 +1,16 @@
+td {
+  width: 120px;
+  height: 120px;
+  font-size: 40pt;
+}
+body {
+  text-align: center;
+  background-color: rgb(180, 180, 180);
+}
+.gameboard {
+  width: 375px;
+  margin: 0 auto;
+}
+#restart {
+  opacity: 0;
+}
