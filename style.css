@@ -3,6 +3,8 @@ td {
   height: 120px;
   font-size: 40pt;
   margin: 0 auto;
+  border: 5px solid black;
+  color: white;
 }
 body {
   text-align: center;
@@ -21,4 +23,7 @@ span {
 }
 h1 {
   font-size: 40pt;
+}
+table {
+  border-collapse: collapse;
 }

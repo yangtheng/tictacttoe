@@ -1,17 +1,20 @@
 function newGame () {
   var square = document.getElementsByClassName('square')
   var turn = document.getElementById('turn')
+  var turn2 = document.getElementById('turn2')
   var currentTurn = 'X'
   function move () {
     if (this.innerHTML !== '') {
       alert ('box is filled!')
     } else if (currentTurn === 'O') {
       this.innerHTML = 'X'
+      this.style.backgroundColor = 'blue'
       currentTurn = 'X'
       turn.textContent = "O's"
       gameOver ('X')
     } else if (currentTurn === 'X') {
       this.innerHTML = 'O'
+      this.style.backgroundColor = 'red'
       currentTurn = 'O'
       turn.textContent = "X's"
       gameOver ('O')
@@ -34,7 +37,8 @@ function newGame () {
         document.getElementById('restart').style.opacity = '1'
         document.getElementById('restart').addEventListener('click', clearBox)
         currentTurn = 'X'
-        turn.textContent = "O's"
+        turn.textContent = "Game Over!"
+        turn2.textContent = ''
     } else if (
       (square[0].innerHTML === 'X' || square[0].innerHTML === 'O') &&
       (square[1].innerHTML === 'X' || square[1].innerHTML === 'O') &&
@@ -50,14 +54,18 @@ function newGame () {
     document.getElementById('restart').style.opacity = '1'
     document.getElementById('restart').addEventListener('click', clearBox)
     currentTurn = 'X'
-    turn.textContent = "O's"
+    turn.textContent = "Game Over!"
+    turn2.textContent = ''
     }
   }
   function clearBox () {
     for (var i = 0; i < square.length; i++) {
     square[i].innerHTML = ''
+    square[i].style.backgroundColor = ''
     }
     document.getElementById('restart').style.opacity = '0'
+    turn.textContent = "O's"
+    turn2.textContent = ' Turn!'
   }
   for (var i = 0; i < square.length; i++) {
   square[i].addEventListener('click', move)
